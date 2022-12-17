@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About Us </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About Us</title>
+</head>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  #contact{
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .column {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #0290e2; 
+    color: white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+    color: black;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+</style>
+<body>
+   <div class="about-section">
+    <h1>About Us Page</h1>
+    <p>This is an <span ><a href="/" style="color:rgb(229, 255, 0);text-decoration: none;font-weight:600;">Word Counter</a> </span> App</p>
+    <p>Made using HTML & Django<p>
+  </div>
+  
+<br><br>
+  
+    <div class="column">
+      <div class="card">
+        
+        <div class="container">
+          <!--<img src="https://web.adithyacreation.repl.co/adi.jpg" style="height: 14.375rem;width: 24rem;padding-top: 1rem;border: 0ch;">!--->
+          <img src="static/images/adi.jpg" style="width: 100%;" alt="adithya">
+
+          <h2>Adithya Mittapally</h2>
+          <p class="title">Developer</p>
+          <p>Hii,
+            I am a Full-Stack Developer.<br>
+          </p><p>Visit Our Website - <a href="https://web.adithyacreation.repl.co" target="_blank" style="text-decoration:none;font-weight: bold;">Click Here</a>
+          </p>
+          <p>If you having any queries
+          </p>
+          <p style="font-weight: bold;"><i style="font-size: 1.2rem;" class="fa">&#xf0e0;</i> contactme.adithya@gmail.com</p>
+          <p ><a id='contact' href="https://form.123formbuilder.com/6318073/contact-form" target="_blank" ><button class="button" style="font-size:1.2rem;">Contact Me</button></a></p>
+        </div>
+      </div>
+    </div>
+  
+    <br><br>
+ 
+<p style="color:rgb(0, 0, 0);text-align: center;bottom: 4%;">© 2022 Adithya Creation, Inc</p>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<title>Word Counter</title>
+<style>
+    h3,form{
+    text-align: center;
+}
+body{
+    background-color: #ff7700;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+.button {
+    background-color: purple; 
+  border: none;
+  color: #e7e7e7;
+  padding: 1.2ch 2.2ch;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 12px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: rgb(177, 0, 177); 
+  color: white;
+}
+
+#head{
+    background-color:black;
+    top: 50%;
+    bottom: 50%;
+    width: 100%;
+    vertical-align: middle;
+    border: 0ch;
+    border-radius: 12rem;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#head h1{
+    float: left;
+    text-align: center;
+    
+}
+
+h3{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+textarea {
+
+  padding: 0.75rem 1.25rem;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  
+  resize: none;
+}
+
+.head-right {
+
+    float: right;
+    text-align: center;
+    padding: 1%;
+    margin: auto;
+    width: 15%;
+
+
+}
+
+.button {
+
+border-radius:10px;
+color: white;
+padding: 0.6rem 0.8rem;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 0.8rem;
+margin: 0.25rem 0.12rem;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+
+.button2 {
+ background-color: #0092d6;
+color: white;
+
+border: 1px solid #0092d6;
+}
+
+.button2:hover {
+color: black; background-color: rgba(255, 255, 255, 0.5);
+}
+</style>
+<body>
+<div id="head">
+<h1 style="color:white;left:5%;position:relative">Word Counter</h1>
+
+
+<div class="head-right">
+    
+<br>
+{% if user.is_authenticated %}
+<a href="logout" style="color:white;text-decoration: none;font-family:'Open Sans';"> Logout</a>
+{% else %}
+<a href="login" style="color:white;text-decoration: none;font-family: monospace;font-size: 0.9rem;">Login or Signup</a>
+{% endif %}
+</div>
+
+
+</div>
+{% if user.is_authenticated %}
+<h2 style="color:#f0e220;text-align: center;"> Welcome, <span style="text-transform:capitalize;">{{user.username}}</span> </h2>
+{% endif %} 
+
+<h3>Enter any sentence below</h3>
+
+<form method="POST" action="counter">
+    {% csrf_token %}
+    <textarea name="words" rows="10" cols="80" autocomplete="off"></textarea><br><br>
+
+    <input type="submit" class="button" value="Count">
+
+
+    <h2>The number of words are {{number_of_words}}</h2>
+</form>
+<p style="color:rgb(0, 0, 0);text-align: center;padding-bottom: 2%;"><a href="/about" target="_blank"><button class="button button2">About Us</button></a></p>
+<footer>
+    <p style="text-align:center;bottom:0%;">© Adithya Mittapally, Inc</p>
+</footer>
+</body>
+
+
+</html>
+
+<!--h1>Welcome {{name}},</h1>
+<p>Your age is {{age}}</p>
+<p>Your city is {{city}}</p>
+<p>Your state is {{state}}</p!-->
